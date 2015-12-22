@@ -110,6 +110,10 @@ add_custom_target(Gorgon
         COMMAND ${CMAKE_COMMAND} -DCOMPONENT=Gorgon -P cmake_install.cmake
         DEPENDS ${legacy_trgt_name}
         )
+
+add_custom_target(Gorgon-only
+        COMMAND ${CMAKE_COMMAND} -DCOMPONENT=Gorgon -P cmake_install.cmake
+        )
         
 include(cmake/Win_install.cmake)
 # --------------------------------------------------------------------
@@ -118,6 +122,10 @@ include(cmake/Win_install.cmake)
 add_custom_target(Package
         COMMAND ${CMAKE_COMMAND} -DCOMPONENT=Package -P cmake_install.cmake
         DEPENDS Gorgon
+        )
+        
+add_custom_target(Package-only
+        COMMAND ${CMAKE_COMMAND} -DCOMPONENT=Package -P cmake_install.cmake
         )
         
 if(APPLE)
