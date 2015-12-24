@@ -89,7 +89,7 @@ if(ENABLE_CMAKE_DEBUG_OUTPUT)
 endif()
 
 # --------------------------------------------------------------------
-#Install Step
+# Install Step
 # --------------------------------------------------------------------
 install(TARGETS pyGORGON
         LIBRARY
@@ -110,7 +110,7 @@ add_custom_target(Gorgon
         
 include(cmake/Win_install.cmake)
 # --------------------------------------------------------------------
-#Package Step
+# Package Step
 # --------------------------------------------------------------------
 if(APPLE)
     include(cmake/Mac_package.cmake)
@@ -121,6 +121,7 @@ else()
                                                         --distpath=${package_dir}
                                                         --clean -y
         WORKING_DIRECTORY ${run_dir})"
+        DEPENDS Gorgon
         COMPONENT "Package"
         )
 endif()
@@ -128,3 +129,4 @@ endif()
 add_custom_target(Package
         COMMAND ${CMAKE_COMMAND} -DCOMPONENT=Package -P cmake_install.cmake
         )
+# --------------------------------------------------------------------
