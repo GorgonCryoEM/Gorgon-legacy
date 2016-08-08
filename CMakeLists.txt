@@ -4,10 +4,9 @@ PROJECT(Gorgon
         LANGUAGES CXX
         )
 
-set(legacy_trgt_name pyGORGON)
-
 include(cmake/functions.cmake)
 include(cmake/Configure.cmake)
+include(cmake/wrappers.cmake)
 include(cmake/Debug.cmake)
 
 include(cmake/MacOSX/init.cmake)
@@ -69,14 +68,10 @@ list(APPEND GORGON_INCLUDE_DIRS
 	)
 
 include_directories(${GORGON_INCLUDE_DIRS})
-ADD_LIBRARY(${legacy_trgt_name} MODULE ${CMAKE_BINARY_DIR}/src/LibPyGorgon.cpp)
-target_link_libraries(${legacy_trgt_name} ${GORGON_LIBRARIES})
 # --------------------------------------------------------------------
 # Add subdirectories and enable testing
 # --------------------------------------------------------------------
 enable_testing()
-
-add_subdirectory(src)
 # --------------------------------------------------------------------
 # C++11 flags
 # --------------------------------------------------------------------
@@ -84,6 +79,8 @@ add_subdirectory(src)
 #list( APPEND CMAKE_CXX_FLAGS           ${cxx11_flags})
 #list( APPEND CMAKE_SHARED_LINKER_FLAGS ${cxx11_flags})
 
+# --------------------------------------------------------------------
+add_subdirectory(legacy)
 # --------------------------------------------------------------------
 # Some debug output
 # --------------------------------------------------------------------
@@ -93,8 +90,6 @@ if(ENABLE_CMAKE_DEBUG_OUTPUT)
     foreach(dir ${dirs})
       message(STATUS "DIRS='${dir}'")
     endforeach()
-
-    get_property(dirs TARGET ${legacy_trgt_name} PROPERTY LINK_LIBRARIES)
 
     foreach(dir ${GORGON_LIBRARIES})
       message("LIBS='${dir}'")
