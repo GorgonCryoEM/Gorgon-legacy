@@ -1,0 +1,27 @@
+package:
+    name: gorgon-legacy
+    version: 2.2.3
+
+build:
+    number: 0
+
+source:
+    path: {{RECIPE_DIR}}/../../
+
+requirements:
+    build:
+        - cmake >=3.4
+        - python 2.7.*
+        - boost
+        - fftw
+        - freeglut  # [not osx]
+    run:
+        - python 2.7.*
+        - boost
+        - fftw
+        - freeglut  # [not osx]
+        - pyqt
+        - pyopengl
+
+about:
+  summary: Gorgon, an interactive molecular modeling system
