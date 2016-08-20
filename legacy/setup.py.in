@@ -1,0 +1,16 @@
+from setuptools import setup
+
+setup(
+    name="gorgon-legacy",
+    version="@Gorgon_VERSION@",
+    package_dir={'gorgon':'bin'},
+    packages=['gorgon', 'gorgon.legacy', 'gorgon.legacy.correspondence', 'gorgon.legacy.plugins', 'gorgon.legacy.seq_model'],
+    package_data={'gorgon.legacy':['libpylegacy.so', 'libpylegacy.pyd']},
+    entry_points={
+        'console_scripts': [
+            'gorgon-legacy=gorgon.legacy.gorgon:main',
+        ],
+    },
+    zip_safe = False,
+
+)
