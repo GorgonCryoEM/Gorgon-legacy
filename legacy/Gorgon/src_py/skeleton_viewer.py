@@ -4,7 +4,7 @@
 
 
 from PyQt4 import QtGui, QtCore, QtOpenGL
-from libpyGORGON import MeshRenderer
+from libpylegacy import MeshRenderer
 from base_viewer import BaseViewer
 from model_visualization_form import ModelVisualizationForm
 from skeleton_laplacian_smoothing_form import SkeletonLaplacianSmoothingForm

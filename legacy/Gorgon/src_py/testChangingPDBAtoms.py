@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import sys
-from libpyGORGON import PDBAtom,Vector3DFloat
+from libpylegacy import PDBAtom,Vector3DFloat
 from PyQt4 import QtGui,  QtCore
 from window_manager import WindowManager
 from main_window_form import MainWindowForm

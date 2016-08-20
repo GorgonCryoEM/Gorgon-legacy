@@ -10,7 +10,7 @@ from .Helix import Helix
 from .Sheet import Sheet
 from .Coil import Coil
 from .Strand import Strand
-from ..libpyGORGON import PDBBond
+from ..libpylegacy import PDBBond
 
 try:
   from PyQt4 import QtCore, QtGui

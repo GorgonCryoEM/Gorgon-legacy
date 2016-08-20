@@ -4,7 +4,7 @@
 
 
 from PyQt4 import QtCore, QtGui
-from libpyGORGON import PDBAtom, Vector3DFloat
+from libpylegacy import PDBAtom, Vector3DFloat
 from seq_model.Residue import Residue
 from base_dock_widget import BaseDockWidget
 

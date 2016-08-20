@@ -6,7 +6,7 @@
 #                    More info in: seq_model-doc.txt
 #
 
-from ..libpyGORGON import PDBAtom,Vector3DFloat
+from ..libpylegacy import PDBAtom,Vector3DFloat
 
 class Residue:
     '''Residue objects have one-letter and three-letter abbreviations and contain PDBAtoms'''

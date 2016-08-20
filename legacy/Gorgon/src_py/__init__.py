@@ -1,1 +1,1 @@
-import libpyGORGON
+import libpylegacy

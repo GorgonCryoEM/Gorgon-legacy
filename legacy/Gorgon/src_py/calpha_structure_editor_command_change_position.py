@@ -6,7 +6,7 @@
 
 import math
 from PyQt4 import QtGui, QtCore
-from libpyGORGON import Vector3DFloat
+from libpylegacy import Vector3DFloat
 
 class CAlphaStructureEditorCommandChangePosition(QtGui.QUndoCommand):
     def __init__(self, viewer, editor, doTranslate, translateVector, doRotate, rotateCenter, rotateAxis, rotateOldAngle, rotateNewAngle, rotateFieldNum):

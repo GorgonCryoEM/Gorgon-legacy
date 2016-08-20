@@ -1,4 +1,4 @@
-from libpyGORGON import *
+from libpylegacy import *
 from sse_hunter_engine import SSEHunterEngine
 
 #The idea of this program is to compare results from the EMAN1 program ssehunter3.py with those from Gorgon's SSEHunter

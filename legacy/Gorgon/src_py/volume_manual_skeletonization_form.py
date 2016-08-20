@@ -5,7 +5,7 @@
 
 from PyQt4 import QtCore, QtGui
 from ui_dialog_volume_manual_skeletonization import Ui_DialogVolumeManualSkeletonization
-from libpyGORGON import InteractiveSkeletonEngine
+from libpylegacy import InteractiveSkeletonEngine
 from base_dock_widget import BaseDockWidget
 
 from OpenGL.GL import *

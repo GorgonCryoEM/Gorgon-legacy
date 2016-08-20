@@ -7,9 +7,9 @@ import sys, os, time
 from PyQt4 import QtOpenGL, QtCore, QtGui
 from vector_lib import *
 from scene_editor_form import SceneEditorForm
-from libpyGORGON import Vector3DFloat
+from libpylegacy import Vector3DFloat
 from cmath import *
-from libpyGORGON import CAlphaRenderer
+from libpylegacy import CAlphaRenderer
 from .seq_model.Chain import Chain
 
 from OpenGL.GL import *

@@ -4,7 +4,7 @@
 
 
 from PyQt4 import QtCore, QtGui
-from libpyGORGON import InteractiveLoopBuilderEngine, PDBAtom, Vector3DFloat, PDBBond
+from libpylegacy import InteractiveLoopBuilderEngine, PDBAtom, Vector3DFloat, PDBBond
 from ui_dialog_volume_manual_skeletonization import Ui_DialogVolumeManualSkeletonization
 from volume_manual_skeletonization_form import VolumeManualSkeletonizationForm
 from seq_model import Coil

@@ -6,7 +6,7 @@
 from PyQt4 import QtCore, QtGui
 from ui_dialog_calpha_flexible_fitting import Ui_DialogCAlphaFlexibleFitting
 from base_dock_widget import BaseDockWidget
-from libpyGORGON import FlexibleFittingEngine, SSECorrespondenceNode
+from libpylegacy import FlexibleFittingEngine, SSECorrespondenceNode
 from math import pi
 from copy import deepcopy
 

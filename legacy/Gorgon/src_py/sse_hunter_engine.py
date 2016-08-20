@@ -4,7 +4,7 @@
 
 
 
-from libpyGORGON import SSEHunter, RadialProfileType
+from libpylegacy import SSEHunter, RadialProfileType
 from math import *
 
 def cross_product(a,b):

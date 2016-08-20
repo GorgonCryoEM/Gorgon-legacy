@@ -5,7 +5,7 @@
 
 from PyQt4 import QtCore, QtGui
 from ui_dialog_sse_helix_correspondence_finder import Ui_DialogSSEHelixCorrespondenceFinder
-from libpyGORGON import SSECorrespondenceEngine, SSECorrespondenceResult, Vector3DFloat
+from libpylegacy import SSECorrespondenceEngine, SSECorrespondenceResult, Vector3DFloat
 from correspondence.CorrespondenceLibrary import CorrespondenceLibrary
 from correspondence.Correspondence import Correspondence
 from correspondence.Match import Match

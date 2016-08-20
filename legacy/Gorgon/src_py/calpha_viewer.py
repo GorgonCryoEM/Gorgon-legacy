@@ -4,7 +4,7 @@
 
 
 from PyQt4 import QtGui, QtCore, QtOpenGL
-from libpyGORGON import CAlphaRenderer
+from libpylegacy import CAlphaRenderer
 from base_viewer import BaseViewer
 from calpha_choose_chain_to_load_form import CAlphaChooseChainToLoadForm
 from calpha_atom_placer_form import CAlphaAtomPlacerForm
