@@ -10,7 +10,7 @@ from scene_editor_form import SceneEditorForm
 from libpyGORGON import Vector3DFloat
 from cmath import *
 from libpyGORGON import CAlphaRenderer
-from seq_model.Chain import Chain
+from .seq_model.Chain import Chain
 
 from OpenGL.GL import *
 from OpenGL.GLU import *

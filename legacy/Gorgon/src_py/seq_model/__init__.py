@@ -2,3 +2,4 @@
 # Author:        Sasakthi S. Abeysinghe (sasakthi@gmail.com)
 # Description:   An initalization file for the seq_model module.
 
+from .. import libpyGORGON

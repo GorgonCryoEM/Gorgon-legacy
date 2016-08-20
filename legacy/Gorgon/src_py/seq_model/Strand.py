@@ -12,7 +12,7 @@ try:
 except:
     qtEnabled=False
 
-from seq_model.Secel import Secel
+from .Secel import Secel
 
 class Strand(Secel):
     def __init__(self, chain, strandNo, label, startIndex, stopIndex, color=None):

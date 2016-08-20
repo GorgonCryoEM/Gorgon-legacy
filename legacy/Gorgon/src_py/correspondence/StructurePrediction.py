@@ -6,12 +6,12 @@
 #                    More info in: correspondence-doc.txt
 #
 
-from seq_model.Helix import Helix
-from seq_model.Coil import Coil
-from seq_model.Strand import Strand
-from seq_model.Chain import Chain
-from seq_model.Residue import Residue
-from libpyGORGON import SeqReader, SeqFileData
+from ..seq_model.Helix import Helix
+from ..seq_model.Coil import Coil
+from ..seq_model.Strand import Strand
+from ..seq_model.Chain import Chain
+from ..seq_model.Residue import Residue
+from ..libpyGORGON import SeqReader, SeqFileData
 
 try:
     from PyQt4 import QtCore, QtGui

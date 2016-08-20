@@ -6,7 +6,7 @@
 #                    More info in: correspondence-doc.txt
 #
 
-from ObservedHelix import ObservedHelix
+from .ObservedHelix import ObservedHelix
 
 class StructureObservation:  #SSEBuilderResults
   def __init__(self, params=None, files=None, comments=None, helixDict=None, sheetDict=None, strandDict=None, filename=None):

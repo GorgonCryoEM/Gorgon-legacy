@@ -5,12 +5,12 @@
 # Class Description: Class that models polypeptide chains, whih are sequences of Residue objects.
 #                    More info in: seq_model-doc.txt
 #
-from seq_model.Residue import Residue
-from seq_model.Helix import Helix
-from seq_model.Sheet import Sheet
-from seq_model.Coil import Coil
-from seq_model.Strand import Strand
-from libpyGORGON import PDBBond
+from .Residue import Residue
+from .Helix import Helix
+from .Sheet import Sheet
+from .Coil import Coil
+from .Strand import Strand
+from ..libpyGORGON import PDBBond
 
 try:
   from PyQt4 import QtCore, QtGui
