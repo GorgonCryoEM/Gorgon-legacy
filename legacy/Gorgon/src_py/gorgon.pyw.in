@@ -13,6 +13,8 @@ if(sys.platform == 'win32'):
         from OpenGL.platform import win32
     except AttributeError:
         pass
+    except ImportError:
+            pass
 elif(sys.platform == 'darwin'):
     if os.environ.has_key('RESOURCEPATH') :
         sys.path = [os.path.join(os.environ['RESOURCEPATH'], 'lib', 'python2.7', 'lib-dynload')] + sys.path
