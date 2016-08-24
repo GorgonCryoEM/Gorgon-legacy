@@ -27,17 +27,8 @@ function(add_dll lib)
     set(win_dlls ${win_dlls} PARENT_SCOPE)
 endfunction()
 # --------------------------------------------------------------------
-function(rename_target_windows trgt)
-    set_target_properties(${trgt}
-                    PROPERTIES
-                    PREFIX lib
-                    SUFFIX .pyd
-                    )
-endfunction()
-# --------------------------------------------------------------------
 function(install_dlls trgt)
     set(trgt ${${trgt}_trgt_name})
-    rename_target_windows(py${trgt})
     
     install_to_destinations(FILES ${win_dlls}
             DESTINATIONS ${CMAKE_BINARY_DIR}/bin/${proj_low}
