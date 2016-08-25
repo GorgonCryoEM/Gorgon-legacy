@@ -144,7 +144,7 @@ struct tuple3_to_python : python::to_python_converter<T, tuple3_to_python<T> > {
 // **************************************************************************************
 
 #include <boost/python/suite/indexing/vector_indexing_suite.hpp>
-BOOST_PYTHON_MODULE(lib${legacy_trgt_name})
+BOOST_PYTHON_MODULE(@current_pylib@)
 {
 	
 	vector_from_python<float>();
