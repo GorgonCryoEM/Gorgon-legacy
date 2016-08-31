@@ -9,7 +9,6 @@ include(cmake/wrappers.cmake)
 include(cmake/Debug.cmake)
 
 include(cmake/MacOSX/init.cmake)
-include(cmake/Windows/init.cmake)
 
 # Number of processors/cores
 include(cmake/ParallelJobs.cmake)
