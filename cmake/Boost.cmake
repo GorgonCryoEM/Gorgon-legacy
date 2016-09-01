@@ -5,12 +5,17 @@ endif()
 
 set(Boost_USE_MULTITHREADED ON)
 
-find_package(Boost COMPONENTS python)
+if(NOT WIN32)
+	find_package(Boost COMPONENTS python REQUIRED)
+else()
+	find_package(Boost COMPONENTS python serialization REQUIRED)
+endif()
+
 update_libs_includes(Boost_LIBRARIES Boost_INCLUDE_DIR)
 if(Boost_FOUND)
 	message(STATUS "  ${Boost_LIBRARIES}")
 endif()
 
 if(WIN32)
-	link_directories(${Boost_LIBRARY_DIR_RELEASE})
+	link_directories($ENV{LIBRARY_LIB})
 endif()
