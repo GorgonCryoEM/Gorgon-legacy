@@ -15,7 +15,7 @@
 #include <map>	
 #include <queue>
 #ifdef _WIN32
-	#include <hash_map>
+	#include <unordered_map>
 	using namespace stdext;
 #endif
 
@@ -53,7 +53,7 @@ namespace wustl_mm {
 
 
 		#ifdef _WIN32
-			typedef hash_map<int, int> HashMapType;
+			typedef unordered_map<int, int> HashMapType;
 		#else
 			typedef map<int, int> HashMapType;
 		#endif
