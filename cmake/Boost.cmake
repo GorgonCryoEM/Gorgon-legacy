@@ -8,6 +8,7 @@ set(Boost_USE_MULTITHREADED ON)
 if(NOT WIN32)
 	find_package(Boost COMPONENTS python REQUIRED)
 else()
+	set(BOOST_LIBRARYDIR $ENV{LIBRARY_LIB})
 	find_package(Boost COMPONENTS python serialization REQUIRED)
 endif()
 
