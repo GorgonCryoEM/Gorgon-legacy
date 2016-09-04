@@ -1,4 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.4)
+set(CMAKE_OSX_ARCHITECTURES x64)
 PROJECT(Gorgon
         VERSION 2.3
         LANGUAGES CXX
@@ -63,6 +64,7 @@ list(APPEND GORGON_INCLUDE_DIRS
 
 include_directories(${GORGON_INCLUDE_DIRS})
 # --------------------------------------------------------------------
+set(CMAKE_OSX_DEPLOYMENT_TARGET 10.7)
 # --------------------------------------------------------------------
 # C++11 flags
 # --------------------------------------------------------------------
