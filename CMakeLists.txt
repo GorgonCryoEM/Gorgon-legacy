@@ -68,10 +68,12 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET 10.7)
 # --------------------------------------------------------------------
 # C++11 flags
 # --------------------------------------------------------------------
-#set(cxx11_flags "-std=c++0x --stdlib=libc++")
-#list( APPEND CMAKE_CXX_FLAGS           ${cxx11_flags})
-#list( APPEND CMAKE_SHARED_LINKER_FLAGS ${cxx11_flags})
-
+if(APPLE)
+    set(cxx11_flags -std=c++11 --stdlib=libc++)
+    set( CMAKE_CXX_FLAGS           "-std=c++11 --stdlib=libc++")
+    set( CMAKE_SHARED_LINKER_FLAGS "-std=c++11 --stdlib=libc++")
+#    set( LINKFLAGS "${LINKFLAGS} -std=c++11 -stdlib=libc++ -L${LIBRARY_PATH}")
+endif()
 # --------------------------------------------------------------------
 add_subdirectory(legacy)
 # --------------------------------------------------------------------
