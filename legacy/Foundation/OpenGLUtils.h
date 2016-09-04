@@ -29,7 +29,7 @@ namespace wustl_mm {
 		void OpenGLUtils::SetColor(float colorR, float colorG, float colorB, float colorA)  {
 			glColor4f(colorR, colorG, colorB, colorA);
 			GLfloat diffuse[4] = {colorR, colorG, colorB, colorA};
-			GLfloat ambient[4] = {colorR*0.2, colorG*0.2, colorB*0.2, colorA};
+			GLfloat ambient[4] = {GLfloat(colorR*0.2), GLfloat(colorG*0.2), GLfloat(colorB*0.2), colorA};
 			GLfloat specular[4] = {1.0, 1.0, 1.0, 1.0};
 			glMaterialfv(GL_BACK, GL_AMBIENT,   ambient);
 			glMaterialfv(GL_BACK, GL_DIFFUSE,   diffuse); 
