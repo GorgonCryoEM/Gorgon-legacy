@@ -330,10 +330,6 @@ prediction and the chain model by replacing the selection, removing a
 residue from the selection, adding a residue to the selection, or 
 adding a list of residues to the selection.
     '''
-    dock = self.parentWidget().parentWidget().parentWidget().parentWidget()
-    viewer = dock.viewer
-    renderer = viewer.renderer
-    app = dock.app
     
     selectionToClear = self.currentChainModel.getSelection()
     for i in selectionToClear:
@@ -356,6 +352,8 @@ adding a list of residues to the selection.
             continue    
         selectedAtom.setSelected(True)
         
+    dock = self.parentWidget().parentWidget().parentWidget().parentWidget()
+    viewer = dock.viewer
     viewer.centerOnSelectedAtoms()    
     viewer.emitModelChanged()
     
