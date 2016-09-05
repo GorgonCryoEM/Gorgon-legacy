@@ -313,40 +313,40 @@ prediction and the chain model by replacing the selection, removing a
 residue from the selection, adding a residue to the selection, or 
 adding a list of residues to the selection.
     '''
-    
+  
     print "..setSequenceSelection"
     selectionToClear = self.currentChainModel.getSelection()
     print "  ..selectionToClear ", selectionToClear
     for i in selectionToClear:
       print "...for i in selectionToClear:"
-        try: 
-            self.structurePrediction.chain[i]
-        except KeyError: 
-            continue
-        atom = self.currentChainModel[i].getAtom('CA')
-        if atom:
-            atom.setSelected(False)
+      try:
+        self.structurePrediction.chain[i]
+      except KeyError:
+        continue
+      atom = self.currentChainModel[i].getAtom('CA')
+      if atom:
+        atom.setSelected(False)
     self.structurePrediction.chain.setSelection(newSelection,removeOne,addOne,addRange)
     self.currentChainModel.setSelection(newSelection,removeOne,addOne,addRange)
-    
+  
     print "self.currentChainModel: ", self.currentChainModel
     sss = self.currentChainModel.getSelection()
     print "  ..sss ", sss
     for i in sss:
       print "   ...self.currentChainModel[i]: ", self.currentChainModel[i]
-        try:
-            selectedAtom = self.currentChainModel[ i ].getAtom('CA')
+      try:
+        selectedAtom = self.currentChainModel[ i ].getAtom('CA')
         print "  ...selectedAtom: ", selectedAtom
-        except KeyError:
-            continue
-        if not selectedAtom:
-            continue    
-        selectedAtom.setSelected(True)
+      except KeyError:
+        continue
+      if not selectedAtom:
+        continue
+      selectedAtom.setSelected(True)
       print "...selectedAtom.setSelected(True) ", selectedAtom.getSelected()
-        
+  
     dock = self.parentWidget().parentWidget().parentWidget().parentWidget()
     viewer = dock.viewer
-    viewer.centerOnSelectedAtoms()    
+    viewer.centerOnSelectedAtoms()
     viewer.emitModelChanged()
     
   def updateSequenceSelection(self):
