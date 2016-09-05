@@ -124,6 +124,8 @@ class CAlphaViewer(BaseViewer):
           
     # Overridden
     def emitElementClicked(self, hitStack, event):        
+        print "emitElementClicked overridden: ", self.title, hitStack
+        print "self.displayStyle: ", self.displayStyle
         if (self.displayStyle == self.DisplayStyleRibbon):
             sseData = self.formatRibbonHitstack(hitStack)
             self.emit(QtCore.SIGNAL("ribbonClicked (int, PyQt_PyObject, PyQt_PyObject, QMouseEvent)"), sseData[0], sseData[1], sseData[2], event)
@@ -672,6 +674,7 @@ This function loads a SEQ file and creates a StructurePrediction object.
         self.emitAtomSelectionUpdated(self.main_chain.getSelection())      
 
     def processElementClick(self, *argv):
+        print argv
         """
 In response to a click on a C-alpha element, this updates the selected
 residues in the Chain object.

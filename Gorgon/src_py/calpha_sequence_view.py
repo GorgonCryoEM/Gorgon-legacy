@@ -233,14 +233,17 @@ residues is selected.
     '''
 
     if mouseEvent.button() == QtCore.Qt.LeftButton and mouseEvent.y() < self.cellHeight():
+      print "...if1 mouseEvent.button() == QtCore.Qt.LeftButton and mouseEvent.y() < self.cellHeight():"
       residue=self.getResidueIndexByMousePosition(mouseEvent.x(),self.cellHeight() +1)
       secel = self.structurePrediction.getSecelByIndex(residue)
       self.structurePrediction.setSecelSelection(secel)
       newSelection=range(secel.startIndex, secel.stopIndex+1)
       #  CTRL key pressed
       if mouseEvent.modifiers() & QtCore.Qt.CTRL:
+        print "  ...if mouseEvent.modifiers() & QtCore.Qt.CTRL:"
         self.setSequenceSelection(addRange=newSelection)
       else:
+        print "   ...else: mouseEvent.modifiers() & QtCore.Qt.CTRL:"
         self.setSequenceSelection(newSelection)
       
       self.parentWidget().parentWidget().parentWidget().structureEditor.setResidues(newSelection)
@@ -249,6 +252,7 @@ residues is selected.
 
     # LEFT MOUSE PRESS
     if mouseEvent.button() == QtCore.Qt.LeftButton and mouseEvent.y() < 2 * self.cellHeight():
+      print "...if2 mouseEvent.button() == QtCore.Qt.LeftButton and mouseEvent.y() < 2 * self.cellHeight():"
       additionalResidue=self.getResidueIndexByMousePosition(mouseEvent.x(),mouseEvent.y())
       self.parentWidget().parentWidget().parentWidget().structureEditor.setResidues([additionalResidue])
       
@@ -310,8 +314,11 @@ residue from the selection, adding a residue to the selection, or
 adding a list of residues to the selection.
     '''
     
+    print "..setSequenceSelection"
     selectionToClear = self.currentChainModel.getSelection()
+    print "  ..selectionToClear ", selectionToClear
     for i in selectionToClear:
+      print "...for i in selectionToClear:"
         try: 
             self.structurePrediction.chain[i]
         except KeyError: 
@@ -322,14 +329,20 @@ adding a list of residues to the selection.
     self.structurePrediction.chain.setSelection(newSelection,removeOne,addOne,addRange)
     self.currentChainModel.setSelection(newSelection,removeOne,addOne,addRange)
     
-    for i in self.currentChainModel.getSelection():
+    print "self.currentChainModel: ", self.currentChainModel
+    sss = self.currentChainModel.getSelection()
+    print "  ..sss ", sss
+    for i in sss:
+      print "   ...self.currentChainModel[i]: ", self.currentChainModel[i]
         try:
             selectedAtom = self.currentChainModel[ i ].getAtom('CA')
+        print "  ...selectedAtom: ", selectedAtom
         except KeyError:
             continue
         if not selectedAtom:
             continue    
         selectedAtom.setSelected(True)
+      print "...selectedAtom.setSelected(True) ", selectedAtom.getSelected()
         
     dock = self.parentWidget().parentWidget().parentWidget().parentWidget()
     viewer = dock.viewer

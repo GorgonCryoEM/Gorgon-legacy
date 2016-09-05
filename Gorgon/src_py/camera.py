@@ -293,6 +293,7 @@ class Camera(QtOpenGL.QGLWidget):
         self.selectedScene = sceneId;
             
     def processMouseClick(self, mouseHits, event, leftPressed, midPressed, rightPressed): 
+        print "camera:processMouseClick: ", mouseHits
         self.emitMouseClickedRaw(mouseHits, event)
 
         globalMinDepth = self.far + 1
@@ -300,6 +301,7 @@ class Camera(QtOpenGL.QGLWidget):
         sceneId = -1
         for hit_record in mouseHits:
             minDepth, maxDepth, names = hit_record
+            print "  ... ", minDepth, maxDepth, names
             names = list(names)
             if(self.scene[names[0]].selectEnabled and globalMinDepth > minDepth):
                 globalMinDepth = minDepth
@@ -309,6 +311,7 @@ class Camera(QtOpenGL.QGLWidget):
             minNames.pop(0)
             
            
+        print "...minNames: ", minNames
         if (leftPressed):
             if (event.modifiers() & QtCore.Qt.CTRL):        # Multiple selection mode
                 if (sceneId >= 0):
