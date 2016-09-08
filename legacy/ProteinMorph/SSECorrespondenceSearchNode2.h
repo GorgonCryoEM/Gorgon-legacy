@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <algorithm>
+#include <iterator>
 #include <Foundation/GraphBase.h>
 using namespace wustl_mm::Foundation;
 using namespace std;

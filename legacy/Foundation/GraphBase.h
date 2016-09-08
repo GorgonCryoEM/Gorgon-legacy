@@ -13,6 +13,7 @@
 #include <map>
 #include <set>
 #include <algorithm>
+#include <iterator>
 #include "GorgonPriorityQueue.h"
 
 using namespace std;
