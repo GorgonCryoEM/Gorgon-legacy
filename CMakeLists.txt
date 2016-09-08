@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.4)
 PROJECT(Gorgon
-        VERSION 2.2.0
+        VERSION 2.3
         LANGUAGES CXX
         )
 
@@ -48,6 +48,13 @@ set( EXTERNAL_PROJECTS
         FFTW3F
         )
 
+#Conda prefix
+if(NOT WIN32)
+    set(CMAKE_PREFIX_PATH $ENV{PREFIX})
+else()
+    set(CMAKE_PREFIX_PATH $ENV{LIBRARY_PREFIX})
+endif()
+
 foreach(proj ${EXTERNAL_PROJECTS})
     include(cmake/${proj}.cmake)
 endforeach()
@@ -55,6 +62,7 @@ endforeach()
 # --------------------------------------------------------------------
 # Include and link directories, targets, target link libraries
 # --------------------------------------------------------------------
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 list(APPEND GORGON_INCLUDE_DIRS
 	${CMAKE_CURRENT_SOURCE_DIR}
 	${GORGON_EXTERNAL_LIBRARIES_DIR}
