@@ -3,7 +3,7 @@ init()
 include(cmake/Windows/init.cmake)
 # --------------------------------------------------------------------
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Gorgon/src_py/gorgon.pyw.in
-        ${CMAKE_BINARY_DIR}/bin/legacy/gorgon.py
+        ${CMAKE_BINARY_DIR}/bin/legacy/main.py
         )
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/setup.py.in
