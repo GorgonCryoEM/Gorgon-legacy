@@ -61,7 +61,7 @@ def main():
     window.windowManager.sseViewer.helixCorrespondanceFinder.checkOk()
     window.windowManager.sseViewer.helixCorrespondanceFinder.accept()
     
-    sys.exit(app.exec_())
+    # sys.exit(app.exec_())
     
 if __name__ == '__main__':
     main()
