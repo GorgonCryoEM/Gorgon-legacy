@@ -86,7 +86,7 @@ class SSEViewer(BaseViewer):
         self.setCursor(QtCore.Qt.WaitCursor)
             
     def loadHelixData(self):
-        self.helixFileName = QtGui.QFileDialog.getOpenFileName(self, self.tr("Open Helix Annotations"), "", self.tr(self.renderer.getSupportedHelixLoadFileFormats()))
+        # self.helixFileName = QtGui.QFileDialog.getOpenFileName(self, self.tr("Open Helix Annotations"), "", self.tr(self.renderer.getSupportedHelixLoadFileFormats()))
         self.fileName = self.helixFileName;
         if not self.helixFileName.isEmpty():
             self.loadHelixDataFromFile(self.helixFileName)

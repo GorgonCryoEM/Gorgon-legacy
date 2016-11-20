@@ -342,7 +342,7 @@ class BaseViewer(QtOpenGL.QGLWidget):
         
           
     def loadData(self):
-        self.fileName = QtGui.QFileDialog.getOpenFileName(self, self.tr("Open Data"), "", self.tr(self.renderer.getSupportedLoadFileFormats()))
+        # self.fileName = QtGui.QFileDialog.getOpenFileName(self, self.tr("Open Data"), "", self.tr(self.renderer.getSupportedLoadFileFormats()))
         if not self.fileName.isEmpty():  
             self.loadDataFromFile(self.fileName)
             

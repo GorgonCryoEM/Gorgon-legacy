@@ -171,7 +171,7 @@ class SSEHelixCorrespondenceFinderForm(BaseDockWidget):
         """
         This loads a SEQ file or, for testing purposes, a PDB file.
         """
-        self.ui.lineEditSequenceFile.setText(self.openFile("Load Sequence File", "Sequence with SSE predictions (*.seq)\nPDB Helix Annotations (*.pdb)"))
+        # self.ui.lineEditSequenceFile.setText(self.openFile("Load Sequence File", "Sequence with SSE predictions (*.seq)\nPDB Helix Annotations (*.pdb)"))
         self.checkOk()
         self.bringToFront()
 
