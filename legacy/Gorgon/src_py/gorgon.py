@@ -45,11 +45,8 @@ def main():
     app.processEvents()
     
     window = MainWindowForm(gorgonVersion)
-    window.isNightlyBuild = True
     window.showNormal()
-    splash.finish(window)
     window.raise_()
-    window.loadPlugins()
     sys.exit(app.exec_())
     
 if __name__ == '__main__':
