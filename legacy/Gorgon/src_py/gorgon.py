@@ -47,6 +47,9 @@ def main():
     window = MainWindowForm(gorgonVersion)
     window.showNormal()
     window.raise_()
+    
+    # print dir(window.actions)
+    # print window.actions.actionList
     sys.exit(app.exec_())
     
 if __name__ == '__main__':
