@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.4)
 PROJECT(Gorgon
-        VERSION 2.3.1
+        VERSION 2.3.2
         LANGUAGES CXX
         )
 
