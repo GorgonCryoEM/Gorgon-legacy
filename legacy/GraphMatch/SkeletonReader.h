@@ -167,7 +167,8 @@ namespace wustl_mm {
 
 			int numSkeletonSheets = (int) sheetClusters->getMax();
 
-			//cout << "min sheet size = " << MINIMUM_SHEET_SIZE << ", num skeleton sheets = " << numSkeletonSheets << ", num SSEs = " << (int)helixes.size() + (int)sheets.size() << endl;
+			cout << "min sheet size = " << MINIMUM_SHEET_SIZE << ", num skeleton sheets = " << numSkeletonSheets << ", num SSEs = " << (int)helixes.size() + (int)sheets.size() << endl;
+//			exit(0);
 
 			vector<vector<double> > sheetDistance(numSkeletonSheets+1, vector<double> ((int)sheets.size()) );
 
@@ -493,7 +494,7 @@ namespace wustl_mm {
 						delete queue ;
 						if ( numNodes > 0 )
 						{
-						//	printf("Sheet %d contain %d nodes.\n", totSheets, numNodes) ;
+							printf("Sheet %d contain %d nodes.\n", totSheets, numNodes) ;
 							sheets[ totSheets ] = numNodes ;
 							totSheets ++ ;
 						}
