@@ -11,6 +11,7 @@
 #include "LinkedNodeStub.h"
 #include <string>
 #include <cassert>
+#include <iostream>
 
 using namespace std;
 
@@ -48,6 +49,19 @@ namespace wustl_mm {
 			static bool IsNodeInBitmap(unsigned long long bitmap, int node);
 			static int RemoveSmallestNode(unsigned long long & bitmap);
 		};
+
+		ostream& operator<<(ostream &out, const LinkedNode& obj) {
+			return out
+					<<" "<<obj.m1Bitmap
+					<<" "<<obj.m2Bitmap
+					<<" "<<obj.missingNodesUsed
+					<<" "<<obj.missingHelixNodesUsed
+					<<" "<<obj.missingSheetNodesUsed
+					<<" "<<obj.depth
+					<<" "<<obj.cost
+					<<" "<<obj.costGStar;
+		}
+			
 
 		LinkedNode::~LinkedNode() {
 		}
