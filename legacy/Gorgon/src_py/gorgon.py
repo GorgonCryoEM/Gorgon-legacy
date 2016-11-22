@@ -58,7 +58,7 @@ def main():
     window.windowManager.skeletonViewer.loadData()
     window.windowManager.sseViewer.loadHelixData()
     # self.sheetFileName = ""
-    window.windowManager.sseViewer.helixCorrespondanceFinder.checkOk()
+    # window.windowManager.sseViewer.helixCorrespondanceFinder.checkOk()
     window.windowManager.sseViewer.helixCorrespondanceFinder.accept()
     
     # sys.exit(app.exec_())
