@@ -53,11 +53,11 @@ def main():
     window.windowManager.skeletonViewer.fileName = QtCore.QString("skeleton-vp6-b0.4.mrc")
     window.windowManager.sseViewer.helixFileName = QtCore.QString("vp6-helices.wrl")
 
+    window.actions.getAction("perform_SSEFindHelixCorrespondences").trigger()
+    window.windowManager.sseViewer.helixCorrespondanceFinder.ui.lineEditSequenceFile.setText(QtCore.QString("vp6.seq"))
     window.windowManager.skeletonViewer.loadData()
     window.windowManager.sseViewer.loadHelixData()
     # self.sheetFileName = ""
-    window.actions.getAction("perform_SSEFindHelixCorrespondences").trigger()
-    window.windowManager.sseViewer.helixCorrespondanceFinder.ui.lineEditSequenceFile.setText(QtCore.QString("vp6.seq"))
     window.windowManager.sseViewer.helixCorrespondanceFinder.checkOk()
     window.windowManager.sseViewer.helixCorrespondanceFinder.accept()
     
