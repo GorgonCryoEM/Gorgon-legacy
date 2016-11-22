@@ -247,6 +247,7 @@ namespace wustl_mm {
 				if(currentNode == NULL) {
 					break;
 				}
+				cout<<*currentNode<<endl;
 
 				// if currentNode contains a complete sequence match, add it to the solutions list
 				if(currentNode->depth == patternGraph->nodeCount) {
