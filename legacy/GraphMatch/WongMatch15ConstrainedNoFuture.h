@@ -233,15 +233,23 @@ namespace wustl_mm {
 
 			// create and set up a new node to start the search
 			currentNode = new LinkedNode();
+			cout<<" Before for loop 1:";
+			cout<<*currentNode<<endl;
 			for(int j = 1; j <= patternGraph->nodeCount; j++) {
 				LinkedNode::AddNodeToBitmap(currentNode->m1Bitmap, j);
+				cout<<*currentNode<<endl;
 			}
+			cout<<" Before for loop 2:";
 			for(int j = 1; j <= baseGraph->nodeCount; j++) {
 				LinkedNode::AddNodeToBitmap(currentNode->m2Bitmap, j);
+				cout<<*currentNode<<endl;
 			}
 			//queue->add(currentNode, currentNode->cost);
 			queue->Add(currentNode->cost, currentNode);
 			pathGenerator = new PathGenerator(baseGraph);
+			
+			cout<<"init: currentNode\n";
+			cout<<*currentNode<<endl;
 		}
 
 
@@ -255,6 +263,8 @@ namespace wustl_mm {
 			bool continueLoop = true;
 			clock_t finishTime;
 			// repeat the following loop until all results are found
+			cout<<"Before while(continueLoop)"<<endl;
+			cout<<*currentNode<<endl;
 			while(continueLoop)
 			{
 				PopBestNode();		
@@ -619,6 +629,9 @@ namespace wustl_mm {
 			//queue->remove(currentNode, cost);
 			queue->PopFirst(cost, currentNode);
 		#ifdef VERBOSE
+			cout<<"WongMatch15ConstrainedNoFuture::popBestNode"<<endl;
+			cout<<cost<<" "<<*currentNode<<endl;
+
 			timeInQueue += clock() - start;
 		#endif
 		}
