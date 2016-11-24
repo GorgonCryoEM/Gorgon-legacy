@@ -82,10 +82,24 @@ namespace wustl_mm {
 
 		WongMatch15ConstrainedNoFuture::WongMatch15ConstrainedNoFuture(StandardGraph * patternGraph, StandardGraph * baseGraph) {
 			Init(patternGraph, baseGraph);
+			string func("WongMatch15ConstrainedNoFuture(StandardGraph * patternGraph, StandardGraph * baseGraph)");
+			cout<<"\nSTART: "<<func<<endl;
+			cout<<"sequence.print()\n";
+			patternGraph->PrintGraph();
+			cout<<"skeleton.print()\n";
+			baseGraph->PrintGraph();
+			cout<<"\nEND: "<<func<<endl;
 		}
 
 		WongMatch15ConstrainedNoFuture::WongMatch15ConstrainedNoFuture(StandardGraph * patternGraph, StandardGraph * baseGraph, int missingHelixCount, int missingSheetCount) {
 			Init(patternGraph, baseGraph);
+			string func("WongMatch15ConstrainedNoFuture(StandardGraph * patternGraph, StandardGraph * baseGraph, int missingHelixCount, int missingSheetCount)");
+			cout<<"\nSTART: "<<func<<endl;
+			cout<<"sequence.print()\n";
+			patternGraph->PrintGraph();
+			cout<<"skeleton.print()\n";
+			baseGraph->PrintGraph();
+			cout<<"\nEND: "<<func<<endl;
 			this->missingHelixCount = missingHelixCount;
 			this->missingSheetCount = missingSheetCount;
 		}

@@ -337,6 +337,11 @@ namespace wustl_mm {
 					// same for reverse direction
 					graph->SetCost(node2, node1, length);
 					graph->SetType(node2, node1, helixes[i]->geometricShapeType);
+					cout<<" "<<helixes[i]->geometricShapeType
+						<<" "<<i
+						<<" "<<node1
+						<<" "<<node2
+						<<endl;
 				} else if (helixes[i]->geometricShapeType == GRAPHEDGE_SHEET) {
 					// assign node number this sheet
 //                int sheetNode = numH + i + 1; // each helix takes two nodes
@@ -347,13 +352,17 @@ namespace wustl_mm {
 
 					// cost is length of self-loops
 					graph->SetCost(sheetNode, sheetNode, SHEET_SELF_LOOP_LENGTH); // nonzero so it shows up as edge in StandardGraph::EdgeExists
-					graph->SetType(sheetNode, sheetNode, GRAPHNODE_SHEET); 
+					graph->SetType(sheetNode, sheetNode, GRAPHNODE_SHEET);
+					cout<<" "<<helixes[i]->geometricShapeType
+						<<" "<<i
+						<<" "<<sheetNode
+						<<endl;
 				}
-				cout<<" "<<i
-					<<" "<<node1
-					<<" "<<node2
-					<<" "<<sheetNode
-					<<endl;
+//				cout<<" "<<i
+//					<<" "<<node1
+//					<<" "<<node2
+//					<<" "<<sheetNode
+//					<<endl;
 
 			}	
 			cout << "adding sheet sizes as sheet node costs" << endl;
