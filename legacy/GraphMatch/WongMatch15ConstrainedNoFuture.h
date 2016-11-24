@@ -796,6 +796,8 @@ namespace wustl_mm {
 								//currentNode->PrintNodeConcise(-1, true, true);
 								//queue->add(currentNode, currentNode->cost);
 								queue->Add(currentNode->cost, currentNode);
+								cout<<"  expandNode():";
+								cout<<currentNode->cost<<" "<<*currentNode<<endl;
 								expanded = true;
 							} else { // not an allowed match
 								delete currentNode;
