@@ -263,17 +263,27 @@ namespace wustl_mm {
 			bool continueLoop = true;
 			clock_t finishTime;
 			// repeat the following loop until all results are found
-			cout<<"Before while(continueLoop)"<<endl;
+			cout<<"Before while(continueLoop) ";
 			cout<<*currentNode<<endl;
+			int cc=0;
 			while(continueLoop)
 			{
-				PopBestNode();		
-				if(currentNode == NULL) {
+                cout<<"   In while(continueLoop): "
+                    <<" cc: "<<cc
+                    <<" foundCount: "<<foundCount
+                    <<endl;
+                cc++;
+                PopBestNode();
+                if(currentNode == NULL) {
 					break;
 				}
-				cout<<*currentNode<<endl;
+				cout << "After popBestNode():"
+					 << *currentNode << endl;
 
 				// if currentNode contains a complete sequence match, add it to the solutions list
+				cout<<"Before IF: "<<(int)currentNode->depth
+					<<" " <<patternGraph->nodeCount
+					<<endl;
 				if(currentNode->depth == patternGraph->nodeCount) {
 					finishTime = clock();
 					foundCount++;
@@ -296,6 +306,8 @@ namespace wustl_mm {
 				// otherwise, expand currentNode and adds its children to usedNodes
 				} else {
 					LinkedNodeStub * currentStub = new LinkedNodeStub(currentNode);
+					cout<<"ELSE: "<<*currentNode
+						<<endl;
 					if(ExpandNode(currentStub)) {
 						usedNodes.push_back(currentStub);
 					} else {
@@ -629,7 +641,7 @@ namespace wustl_mm {
 			//queue->remove(currentNode, cost);
 			queue->PopFirst(cost, currentNode);
 		#ifdef VERBOSE
-			cout<<"WongMatch15ConstrainedNoFuture::popBestNode"<<endl;
+			cout<<"WongMatch::popBestNode ";
 			cout<<cost<<" "<<*currentNode<<endl;
 
 			timeInQueue += clock() - start;
@@ -705,6 +717,9 @@ namespace wustl_mm {
 
 			LinkedNode * temp;
 			double edgeCost;
+			cout<<" longestMatch: "<<longestMatch
+				<<" currentNode->depth: "<<(int)currentNode->depth
+				<<endl;
 #ifdef VERBOSE
 			if(longestMatch < currentNode->depth) {
 				longestMatch = currentNode->depth;
@@ -796,7 +811,7 @@ namespace wustl_mm {
 								//currentNode->PrintNodeConcise(-1, true, true);
 								//queue->add(currentNode, currentNode->cost);
 								queue->Add(currentNode->cost, currentNode);
-								cout<<"  expandNode():";
+								cout<<"  expandNode(): ";
 								cout<<currentNode->cost<<" "<<*currentNode<<endl;
 								expanded = true;
 							} else { // not an allowed match
