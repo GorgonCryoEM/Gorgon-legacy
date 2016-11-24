@@ -54,10 +54,10 @@ namespace wustl_mm {
 			return out
 					<<" "<<obj.m1Bitmap
 					<<" "<<obj.m2Bitmap
-					<<" "<<obj.missingNodesUsed
-					<<" "<<obj.missingHelixNodesUsed
-					<<" "<<obj.missingSheetNodesUsed
-					<<" "<<obj.depth
+					<<" "<<(int)obj.missingNodesUsed
+					<<" "<<(int)obj.missingHelixNodesUsed
+					<<" "<<(int)obj.missingSheetNodesUsed
+					<<" "<<(int)obj.depth
 					<<" "<<obj.cost
 					<<" "<<obj.costGStar;
 		}

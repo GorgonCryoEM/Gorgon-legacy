@@ -7,6 +7,10 @@
 #define LINKEDNODESTUB_H
 
 #include "LinkedNode.h"
+#include <iostream>
+
+using std::ostream;
+
 
 using namespace std;
 namespace wustl_mm {
@@ -36,6 +40,13 @@ namespace wustl_mm {
 		}
 
 		LinkedNodeStub::~LinkedNodeStub() {
+		}
+
+		ostream& operator<<(ostream &out, const LinkedNodeStub& obj) {
+			return out<<(int)obj.n1Node
+					  <<" "<<(int)obj.n2Node
+					  <<" "<<obj.parentNode
+					  <<std::endl;
 		}
 	}
 }
