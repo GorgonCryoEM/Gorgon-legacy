@@ -297,18 +297,28 @@ namespace wustl_mm {
 
 			// create a graph with one node per helix end point and with edges connecting nodes that
 			// are connected along the volume.
-			//cout << "adding " << (int)helixes.size() << " helices and sheets to adjacency matrix" << endl;
+			cout << "adding " << (int)helixes.size() << " helices and sheets to adjacency matrix" << endl;
+			cout<<" GRAPHEDGE_HELIX: "<<GRAPHEDGE_HELIX
+				<<" GRAPHNODE_HELIX: "<<GRAPHNODE_HELIX
+				<<" GRAPHEDGE_SHEET: "<<GRAPHEDGE_SHEET
+				<<" SHEET_SELF_LOOP_LENGTH: "<<SHEET_SELF_LOOP_LENGTH
+				<<" GRAPHNODE_SHEET: "<<GRAPHNODE_SHEET
+				<<endl;
+			
 			for(unsigned int i = 0; i < (int)helixes.size(); i++) {
+				int node1, node2, sheetNode;
 				if(helixes[i]->geometricShapeType == GRAPHEDGE_HELIX) {
 					// assign node numbers for helix ends
-					int node1 = (i*2)+1;
-					int node2 = (i*2)+2;
+//                int node1 = (i*2)+1;
+//                int node2 = (i*2)+2;
+					node1 = (i*2)+1;
+					node2 = (i*2)+2;
 
 					// find the two corner cells in this helix
 					helixes[i]->FindCornerCellsInHelix();
-					//cout << "helix " << i << " has " << helixes[i]->cornerCells.size() << " corners." << endl;
+					cout << "helix " << i << " has " << helixes[i]->cornerCells.size() << " corners." << endl;
 					for (unsigned int j = 0; j < helixes[i]->cornerCells.size(); j++) {
-						//cout << "corner " << j << " is associated with node " << helixes[i]->cornerCells[j].node << endl;
+						cout << "corner " << j << " is associated with node " << helixes[i]->cornerCells[j].node << endl;
 					}
 
 					// length of this helix
@@ -329,7 +339,8 @@ namespace wustl_mm {
 					graph->SetType(node2, node1, helixes[i]->geometricShapeType);
 				} else if (helixes[i]->geometricShapeType == GRAPHEDGE_SHEET) {
 					// assign node number this sheet
-					int sheetNode = numH + i + 1; // each helix takes two nodes
+//                int sheetNode = numH + i + 1; // each helix takes two nodes
+					sheetNode = numH + i + 1; // each helix takes two nodes
 
 					// find all the corner cells in this sheet
 					FindCornerCellsInSheet(vol, paintedVol, helixes, i);
@@ -338,9 +349,14 @@ namespace wustl_mm {
 					graph->SetCost(sheetNode, sheetNode, SHEET_SELF_LOOP_LENGTH); // nonzero so it shows up as edge in StandardGraph::EdgeExists
 					graph->SetType(sheetNode, sheetNode, GRAPHNODE_SHEET); 
 				}
+				cout<<" "<<i
+					<<" "<<node1
+					<<" "<<node2
+					<<" "<<sheetNode
+					<<endl;
 
 			}	
-			//cout << "adding sheet sizes as sheet node costs" << endl;
+			cout << "adding sheet sizes as sheet node costs" << endl;
 			for (unsigned int s = 0; s < skeletonSheets.size(); s++) {
 				int sseSheetNum = helixesMapping[s];
 				//cout << "node " << s << " corresponds to sheet " << helixesMapping[s] << endl;
