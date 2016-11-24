@@ -73,9 +73,9 @@ namespace wustl_mm {
 		
 		StandardGraph * SEQReader::ReadFile(string fileName)
 		{
-			#ifdef DEBUG
+//			#ifdef DEBUG
 				cout << "In SEQReader::ReadFile" << endl;
-			#endif
+//			#endif
 			SEQFileData seqFData = ReadSeqFileData(fileName);
 			StandardGraph * pGraph = GetGraphFromSeqFileData(seqFData);
 			if (!pGraph) return NULL;

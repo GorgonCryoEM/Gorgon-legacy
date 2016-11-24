@@ -244,13 +244,14 @@ namespace wustl_mm {
 		}
 
 		void BackEndInterface::LoadSequenceGraph() {
-			#ifdef DEBUG
+//			#ifdef DEBUG
 			cout << "In BackEndInterface::LoadSequenceGraph" << endl;
-			#endif
+//			#endif
 			if(sequence != NULL) {
 				delete sequence;
 			}
 			sequence = queryEngine->LoadSequenceGraph();
+			cout<<"sequence==NULL: "<<(sequence==NULL)<<endl;
 			//sequence->PrintGraph();
 		}
 

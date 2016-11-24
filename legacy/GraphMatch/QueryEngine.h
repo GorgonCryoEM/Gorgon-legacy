@@ -41,9 +41,9 @@ namespace wustl_mm {
 
 
 		StandardGraph * QueryEngine::LoadSequenceGraph() {
-			#ifdef DEBUG
+//			#ifdef DEBUG
 				cout << "In QueryEngine::LoadSequenceGraph" << endl;
-			#endif
+//			#endif
 			clock_t start, finish;
 			StandardGraph * graph;
 			string type = SEQUENCE_FILE_TYPE; //easier than doing comparison with a char array
