@@ -306,8 +306,10 @@ namespace wustl_mm {
 				// otherwise, expand currentNode and adds its children to usedNodes
 				} else {
 					LinkedNodeStub * currentStub = new LinkedNodeStub(currentNode);
-					cout<<"ELSE: "<<*currentNode
-						<<endl;
+                    cout<<"ELSE: currentNode: "<<*currentNode
+                        <<endl;
+                    cout<<"ELSE: currentStub: "<<*currentStub
+                        <<endl;
 					if(ExpandNode(currentStub)) {
 						usedNodes.push_back(currentStub);
 					} else {
@@ -870,6 +872,17 @@ namespace wustl_mm {
 					currentNode = temp;
 				}
 			}
+            cout<<" In expandNode: before return: currentNode:"<<*currentNode<<endl;
+            cout<<" q.size(): "<<queue->size()<<endl;
+            while(!queue->IsEmpty()) {
+                double dd;
+                LinkedNode *ll;
+                queue->PopFirst(dd, ll);
+                cout << " q.top(): "
+                     << dd
+                     << " " << *ll
+                     << endl;
+            }
 			return expanded;
 		}
 
