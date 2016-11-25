@@ -297,6 +297,9 @@ namespace wustl_mm {
 #endif
 					int numHelices = baseGraph->GetHelixCount();
 					solutions.push_back(SSECorrespondenceResult(currentNode, numHelices));
+//					cout<<"IF: "<<*currentNode
+//						<<" " <<numHelices
+//						<<endl;
 
 #ifdef MAKE_FINAL_MRC
 					char fileName[80];
@@ -311,6 +314,8 @@ namespace wustl_mm {
                     cout<<"ELSE: currentStub: "<<*currentStub
                         <<endl;
 					if(ExpandNode(currentStub)) {
+//						cout<<"--IF: "<<*currentStub
+//							<<endl;
 						usedNodes.push_back(currentStub);
 					} else {
 						delete currentStub;
