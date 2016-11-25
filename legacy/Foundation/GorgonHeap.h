@@ -25,6 +25,8 @@ namespace wustl_mm {
 			T Root();
 			T PopRoot();
 			bool IsEmpty();
+			
+			int size();
 
 			void Print();
 
@@ -39,6 +41,10 @@ namespace wustl_mm {
 
 		};
 
+		template <class T>
+		int GorgonHeap<T>::size() {
+			return values.size();
+		}
 
 		template <class T>
 		GorgonHeap<T>::GorgonHeap() {

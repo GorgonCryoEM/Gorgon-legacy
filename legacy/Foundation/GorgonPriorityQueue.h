@@ -24,11 +24,16 @@ namespace wustl_mm {
 			TValue First();
 
 			bool IsEmpty();
+			int size();
 
 		private:
 			GorgonHeap< GorgonPriorityQueueElement<TKey, TValue> > heap;
 		};
 
+		template <class TKey, class TValue>
+		int GorgonPriorityQueue<TKey, TValue>::size() {
+			return heap.size();
+		}
 		template <class TKey, class TValue>
 		GorgonPriorityQueue<TKey, TValue>::GorgonPriorityQueue(bool maxIsHighestPriority) {
 			heap = GorgonHeap< GorgonPriorityQueueElement<TKey, TValue> >(maxIsHighestPriority);
