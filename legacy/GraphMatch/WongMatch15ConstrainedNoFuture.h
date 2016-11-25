@@ -266,8 +266,7 @@ namespace wustl_mm {
 			cout<<"Before while(continueLoop) ";
 			cout<<*currentNode<<endl;
 			int cc=0;
-			while(continueLoop)
-			{
+            while(continueLoop && cc<2) {
                 cout<<"   In while(continueLoop): "
                     <<" cc: "<<cc
                     <<" foundCount: "<<foundCount
