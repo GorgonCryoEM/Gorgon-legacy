@@ -268,22 +268,22 @@ namespace wustl_mm {
 			int cc=0;
 			while(continueLoop)
 			{
-                cout<<"   In while(continueLoop): "
-                    <<" cc: "<<cc
-                    <<" foundCount: "<<foundCount
-                    <<endl;
+//                cout<<"   In while(continueLoop): "
+//                    <<" cc: "<<cc
+//                    <<" foundCount: "<<foundCount
+//                    <<endl;
                 cc++;
                 PopBestNode();
                 if(currentNode == NULL) {
 					break;
 				}
-				cout << "After popBestNode():"
-					 << *currentNode << endl;
+//				cout << "After popBestNode():"
+//					 << *currentNode << endl;
 
 				// if currentNode contains a complete sequence match, add it to the solutions list
-				cout<<"Before IF: "<<(int)currentNode->depth
-					<<" " <<patternGraph->nodeCount
-					<<endl;
+//				cout<<"Before IF: "<<(int)currentNode->depth
+//					<<" " <<patternGraph->nodeCount
+//					<<endl;
 				if(currentNode->depth == patternGraph->nodeCount) {
 					finishTime = clock();
 					foundCount++;
@@ -309,10 +309,10 @@ namespace wustl_mm {
 				// otherwise, expand currentNode and adds its children to usedNodes
 				} else {
 					LinkedNodeStub * currentStub = new LinkedNodeStub(currentNode);
-                    cout<<"ELSE: currentNode: "<<*currentNode
-                        <<endl;
-                    cout<<"ELSE: currentStub: "<<*currentStub
-                        <<endl;
+//                    cout<<"ELSE: currentNode: "<<*currentNode
+//                        <<endl;
+//                    cout<<"ELSE: currentStub: "<<*currentStub
+//                        <<endl;
 					if(ExpandNode(currentStub)) {
 //						cout<<"--IF: "<<*currentStub
 //							<<endl;
@@ -648,8 +648,8 @@ namespace wustl_mm {
 			//queue->remove(currentNode, cost);
 			queue->PopFirst(cost, currentNode);
 		#ifdef VERBOSE
-			cout<<"WongMatch::popBestNode ";
-			cout<<cost<<" "<<*currentNode<<endl;
+//			cout<<"WongMatch::popBestNode ";
+//			cout<<cost<<" "<<*currentNode<<endl;
 
 			timeInQueue += clock() - start;
 		#endif
@@ -724,9 +724,9 @@ namespace wustl_mm {
 
 			LinkedNode * temp;
 			double edgeCost;
-			cout<<" longestMatch: "<<longestMatch
-				<<" currentNode->depth: "<<(int)currentNode->depth
-				<<endl;
+//			cout<<" longestMatch: "<<longestMatch
+//				<<" currentNode->depth: "<<(int)currentNode->depth
+//				<<endl;
 #ifdef VERBOSE
 			if(longestMatch < currentNode->depth) {
 				longestMatch = currentNode->depth;
@@ -818,8 +818,8 @@ namespace wustl_mm {
 								//currentNode->PrintNodeConcise(-1, true, true);
 								//queue->add(currentNode, currentNode->cost);
 								queue->Add(currentNode->cost, currentNode);
-								cout<<"  expandNode(): ";
-								cout<<currentNode->cost<<" "<<*currentNode<<endl;
+//								cout<<"  expandNode(): ";
+//								cout<<currentNode->cost<<" "<<*currentNode<<endl;
 								expanded = true;
 							} else { // not an allowed match
 								delete currentNode;
@@ -877,17 +877,17 @@ namespace wustl_mm {
 					currentNode = temp;
 				}
 			}
-            cout<<" In expandNode: before return: currentNode:"<<*currentNode<<endl;
-            cout<<" q.size(): "<<queue->size()<<endl;
-            while(!queue->IsEmpty()) {
-                double dd;
-                LinkedNode *ll;
-                queue->PopFirst(dd, ll);
-                cout << " q.top(): "
-                     << dd
-                     << " " << *ll
-                     << endl;
-            }
+//            cout<<" In expandNode: before return: currentNode:"<<*currentNode<<endl;
+//            cout<<" q.size(): "<<queue->size()<<endl;
+//            while(!queue->IsEmpty()) {
+//                double dd;
+//                LinkedNode *ll;
+//                queue->PopFirst(dd, ll);
+//                cout << " q.top(): "
+//                     << dd
+//                     << " " << *ll
+//                     << endl;
+//            }
 			return expanded;
 		}
 

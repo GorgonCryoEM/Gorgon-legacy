@@ -55,12 +55,15 @@ def main():
 
     window.actions.getAction("perform_SSEFindHelixCorrespondences").trigger()
     window.windowManager.sseViewer.helixCorrespondanceFinder.ui.lineEditSequenceFile.setText(QtCore.QString("vp6.seq"))
+    # window.windowManager.sseViewer.correspondenceEngine.loadSequenceGraph()
     window.windowManager.skeletonViewer.loadData()
     window.windowManager.sseViewer.loadHelixData()
     # self.sheetFileName = ""
     # window.windowManager.sseViewer.helixCorrespondanceFinder.checkOk()
-    window.windowManager.sseViewer.helixCorrespondanceFinder.accept()
     
+    # window.windowManager.sseViewer.helixCorrespondanceFinder.accept()
+    window.windowManager.sseViewer.helixCorrespondanceFinder.createBasicCorrespondence()
+    window.windowManager.sseViewer.correspondenceEngine.executeQuery()
     # sys.exit(app.exec_())
     
 if __name__ == '__main__':
