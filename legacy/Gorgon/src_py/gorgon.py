@@ -50,11 +50,11 @@ def main():
     
     # print dir(window.actions)
     # print window.actions.actionList
-    window.windowManager.skeletonViewer.fileName = QtCore.QString("skeleton-vp6-b0.4.mrc")
-    window.windowManager.sseViewer.helixFileName = QtCore.QString("vp6-helices.wrl")
+    window.windowManager.skeletonViewer.fileName = QtCore.QString("densityMap-skeleton.mrc")
+    window.windowManager.sseViewer.helixFileName = QtCore.QString("helices-densityMap.wrl")
 
     window.actions.getAction("perform_SSEFindHelixCorrespondences").trigger()
-    window.windowManager.sseViewer.helixCorrespondanceFinder.ui.lineEditSequenceFile.setText(QtCore.QString("vp6.seq"))
+    window.windowManager.sseViewer.helixCorrespondanceFinder.ui.lineEditSequenceFile.setText(QtCore.QString("groel-segment.seq"))
     # window.windowManager.sseViewer.correspondenceEngine.loadSequenceGraph()
     window.windowManager.skeletonViewer.loadData()
     window.windowManager.sseViewer.loadHelixData()
