@@ -64,6 +64,7 @@ def main():
     # window.windowManager.sseViewer.helixCorrespondanceFinder.accept()
     window.windowManager.sseViewer.helixCorrespondanceFinder.createBasicCorrespondence()
     window.windowManager.sseViewer.correspondenceEngine.executeQuery()
+    window.windowManager.sseViewer.correspondenceEngine.saveCorrespondenceToFile('legacy_corr.corr')
     # sys.exit(app.exec_())
     
 if __name__ == '__main__':
