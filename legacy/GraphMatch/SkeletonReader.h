@@ -481,49 +481,21 @@ namespace wustl_mm {
 						if ( vol->getDataAt(i,j,k) <= 0 || svol->getDataAt(i,j,k) != 0 )
 						{
 							// Not a data point or has been visited
-							cout<<"Not a data point or has been visited";
-							cout<<" "<<i
-								<<" "<<j
-								<<" "<<k
-								<<" "<<vol->getDataAt(i,j,k)
-								<<" "<<svol->getDataAt(i,j,k)
-								<<endl;
 							continue ;
 						}
 						if ( ! isSkeletonSheet( vol, i, j, k ) )
 						{
 							// Not a sheet point
-							cout<<"Not a sheet point\n";
-							cout<<" "<<i
-								<<" "<<j
-								<<" "<<k
-								<<" "<<vol->getDataAt(i,j,k)
-								<<" "<<svol->getDataAt(i,j,k)
-								<<endl;
 							continue ;
 						}
-						cout<<" "<<i
-							<<" "<<j
-							<<" "<<k
-							<<" "<<svol->getDataAt(i,j,k)
-							<<endl;
 
 						//Initialize queue
 						int numNodes = 1 ;
 						svol->setDataAt( i, j, k, totSheets ) ;
 						GridQueue* queue = new GridQueue() ;
 						queue->pushQueue( i, j, k ) ;
-						cout<<" "<<i
-							<<" "<<j
-							<<" "<<k
-							<<" q.size(): "<<queue->getNumElements()
-							<<endl;
 						while ( queue->popQueue(ox, oy, oz) )
 						{
-							cout<<" ox: "<<ox
-								<<" oy: "<<oy
-								<<" oz: "<<oz
-								<<endl;
 							// Test if neighbors satisfy sheet condition
 							if ( isSkeletonSheet(vol, ox, oy, oz ) )
 							{
